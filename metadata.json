@@ -1,0 +1,8 @@
+{
+  "name": "CMC Trick or Click",
+  "description": "Pixel-art swipe game to identify scams, earn event stickers, and boost cybersecurity awareness at CMC Fest Halloween.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

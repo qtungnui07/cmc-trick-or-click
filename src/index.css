@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-pixel: 'VT323', 'JetBrains Mono', monospace;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-pixel);
+    background-color: #0D0914;
+    color: #F8FAFC;
+    overflow-x: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font-family: var(--font-pixel);
+    letter-spacing: 0.03em;
+  }
+}
+
+.font-pixel {
+  font-family: var(--font-pixel);
+  letter-spacing: 0.03em;
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Crisp 2D Pixel Borders & Shadows */
+.pixel-box {
+  border: 3px solid #3B2854;
+  box-shadow: 4px 4px 0px #050308;
+}
+
+.pixel-box-orange {
+  border: 3px solid #FF6B00;
+  box-shadow: 4px 4px 0px #5C2200;
+}
+
+.pixel-box-green {
+  border: 3px solid #10B981;
+  box-shadow: 4px 4px 0px #064E3B;
+}
+
+.pixel-box-red {
+  border: 3px solid #F43F5E;
+  box-shadow: 4px 4px 0px #881337;
+}
+
+.pixel-box-purple {
+  border: 3px solid #A855F7;
+  box-shadow: 4px 4px 0px #3B0764;
+}
+
+.pixel-btn {
+  border: 3px solid #F8FAFC;
+  box-shadow: 4px 4px 0px #050308;
+  transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 120ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pixel-btn:hover:not(:disabled) {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0px #050308;
+}
+
+.pixel-btn:active:not(:disabled) {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0px #050308;
+}
+
+/* Pulse / Glitch Animation for Swapped Buttons Alert */
+@keyframes swap-glitch {
+  0% { transform: scale(1); filter: drop-shadow(0 0 0 transparent); }
+  25% { transform: scale(1.04) rotate(-1deg); filter: drop-shadow(0 0 8px #FF6B00); }
+  50% { transform: scale(0.98) rotate(1deg); filter: drop-shadow(0 0 10px #A855F7); }
+  75% { transform: scale(1.02); filter: drop-shadow(0 0 6px #10B981); }
+  100% { transform: scale(1); filter: drop-shadow(0 0 0 transparent); }
+}
+
+.animate-swap-glitch {
+  animation: swap-glitch 0.4s ease-out;
+}
+
+/* Subtle Retro Grid Backdrop */
+.bg-pixel-grid {
+  background-color: #0D0914;
+  background-image: 
+    linear-gradient(to right, rgba(255, 107, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 107, 0, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Custom Scrollbar for Modals */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #140E1F;
+}
+::-webkit-scrollbar-thumb {
+  background: #3B2854;
+  border: 2px solid #140E1F;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF6B00;
+}
